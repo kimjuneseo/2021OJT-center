@@ -61,7 +61,7 @@
 		form.action = "memberInfoForm.jsp"
 		form.submit();
 	});
-	}
+	};
 </script>
 </head>
 <body>

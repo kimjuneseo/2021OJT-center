@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>쿠기를 만드는 페이지</title>
+</head>
+<body>
+
+<%
+// cookie(쿠키): 웹에서 페이지의 연결을 유지하는 속성, 연결정보가 사용자 측에 저장됨
+%>
+
+</body>
+</html>

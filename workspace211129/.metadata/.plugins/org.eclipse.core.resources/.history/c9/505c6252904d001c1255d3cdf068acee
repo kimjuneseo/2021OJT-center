@@ -1,0 +1,20 @@
+<%@page import="member.MemberDBBean"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		request.setCharacterEncoding("utf-8");
+		MemberDBBean member = MemberDBBean.getInstance();
+		String id = request.getParameter("id");
+		String tel = request.getParameter("id");
+		String id = request.getParameter("id");
+		String pwd = member.findMemberPwd(id, tel, email)
+	%>
+</body>
+</html>

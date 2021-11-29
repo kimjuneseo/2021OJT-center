@@ -1,0 +1,149 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+	/*전체영역*/
+	a{text-decoration: none; color: #000;}
+	.flex{display: flex}
+	#container{ width: 400px; margin: 20px auto;}
+	.btn { padding:10px; background: #b4baba; border: none; border-radius: 5px; font-family: 'Noto Sans KR', sans-serif; color: #; cursor: pinter; transition: .5s }
+	.btn:hover { background: #585555; transition: .5s}
+	/* 제목 */
+	#m_title { margin-bottom: 10px; font-size: 3em; text-align: center; font-family: 'Permanent Marker', cursive; }
+	#s_title { margin-bottom: 10px; font-size: 1.75em; font-weight: 900; font-family: 'Noto Sans KR', sans-serif; text-align: center;}
+	/* 테이블 */
+	table { width: 100%; }
+	td { align-items: center; }
+	tr { height: 50px;  }
+	input { height: 45px; border: none; border-bottom: 1px solid #000;}
+	input[type="text"], input[type="password"]{ width: calc(100% - 1em) padding-left: 1em }
+	.t_input{ width: 100%; margin: 0 auto; }
+	.table__sin{justify-content: space-around;}
+	.login { border: none; background: #585555; color:#fff;}
+</style>
+<script>
+	window.onload = () => {
+		let form = document.joinForm;
+		// 회원 가입 내용에 대한 유효성 검사 - 내용을 입력
+		let btn_insert = document.querySelector("#btn_insert");
+		btn_insert.addEventListener("click", () => {
+			if(form.id.value.length === 0){
+				alert("아이디를 입력해주세요.");
+				return;
+			}
+			if(form.pwd.value.length === 0){
+				alert("비밀번호를 입력해주세요.");
+				return;
+			}
+			if(form.pwd2.value.length === 0){
+				alert("비밀번호가 틀림.");
+				return;
+			}
+			if(form.name.value.length === 0){
+				alert("이름를 입력해주세요.");
+				return;
+			}
+			if(form.tel.value.length === 0){
+				alert("전화번호를 입력해주세요.");
+				return;
+			}
+			if(form.address1.value.length === 0){
+				alert("전화번호를 입력해주세요.");
+				return;
+			}
+			if(form.address2.value.length === 0){
+				alert("전화번호를 입력해주세요.");
+				return;
+			}
+			if(form.email.value.length === 0){
+				alert("전화번호를 입력해주세요.");
+				return;
+			}
+			form.submit();
+		});
+		let pwd = form.pwd;
+		let pwd2 = form.pwd2;
+		let chk_pwd = document.querySelector("#chk_pwd");
+		let chk_pwd2 = document.querySelector("#chk_pwd2");
+		pwd.addEventListener("blur", () => {
+			if(pwd.value.length < 4){
+				chk_pwd.innerText = "4자리 이상이어야 합니다.";
+				pwd.focus();
+			}else{
+				chk_pwd.innerText = "사용가능한 비밀번호입니다";
+				chk_pwd.style.color = "blue";
+			};
+		});
+		
+		pwd2.addEventListener("blur", () => {
+				if(pwd.value !== pwd2.value){
+					chk_pwd2.innerText = "비밀번호가 일치하지 않습니다.";
+					pwd2.focus();
+				}else{
+					chk_pwd2.innerText = "비밀번호가 일치합니다";
+					chk_pwd2.style.color = "blue";
+				}
+		});
+		let address1 = form.address1;
+		let btn_address = document.querySelector('#btn_address');
+		btn_address.addEventListener("click", () => {
+			new daum.Postcode({
+				oncomplete: function(data) {
+					address1.value = data.address;
+			    }
+			}).open();	
+		});
+		
+
+	let email = form.email;
+	let chk_email = document.querySelector("#chk_email");
+	email.addEventListener("blur", () => {
+		if(email.value.indexOf('@') === -1){
+			chk_email.innerText = "사용가능한 이메일을 입력해주세요";
+			email.focus();
+		}else{
+			chk_email.innerText = "사용가능한 이메일입니다";
+			chk_email.style.color = "blue";
+		};
+	});
+
+	// 중복 아이디 체크
+	let btn_chk_id = document.querySelector('#btn_chk_id');
+	btn_chk_id.addEventListener("click", () => {
+		if(!form.id.value){
+			alert("아이디를 입력해주세요");
+			form.id.focus();
+		}else{
+			location = "memberIdCheck.jsp?id="+form.id.value;
+		}
+	})
+	
+	};
+</script>
+</head>
+<body>
+	<div id="container">
+		<div id="m_title">Street Women Fighter</div>
+		<div id="s_title">admin 페이지</div>
+		<form action="memberInfoAllForm.jsp" method="post" name="loginForm">
+			<table>
+				<tr>
+					<td ><input type="text" name="id" class="t_input" placeholder="아이디를 입력해주세요."></td>
+				</tr>
+				<tr>
+					<td ><input type="password" name="pwd" class="t_input" placeholder="비빌번호입력해주세요."></td>
+				</tr>
+				<tr>
+					<td class="flex"><input type="checkbox" name="save_id" id="t_chk"><label for="t_chk">아이디 저장</label></td>
+				</tr>
+				<tr><td ><input type="submit" class="t_input login" value="전체회원 조회" id="btn_login"></td></tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

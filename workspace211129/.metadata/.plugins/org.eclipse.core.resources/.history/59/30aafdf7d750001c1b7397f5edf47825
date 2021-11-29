@@ -1,0 +1,10 @@
+package board;
+
+public class boardDataBean {
+	private int num;
+	private String writer;
+	private int num;
+	private int num;
+	private int num;
+	private int num;
+}

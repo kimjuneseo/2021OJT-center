@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>pageContext 내장객체</title>
+</head>
+<body>
+<%
+/* 
+pageContext 내장체
+- 현재 JSP 페이지의 컨텍스트 정보를 볼 때 사용
+*/
+%>
+</body>
+</html>

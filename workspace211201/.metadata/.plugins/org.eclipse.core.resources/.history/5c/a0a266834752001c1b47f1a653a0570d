@@ -1,0 +1,31 @@
+<%@page import="board.BoardDBBean"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	request.setCharacterEncoding("utf-8");
+	%>
+	<jsp:useBean id="board" class="board.BoardDataBean">
+		<jsp:setProperty name="board" property="*"/>
+	</jsp:useBean>
+<% 
+	BoardDBBean boardPro = BoardDBBean.getInstance();
+	int chk = boardPro.boardUpdate(board);
+	out.print("<script>");
+	if(chk == 0) {        
+		out.println("alert('회원가입에 실패하였습니다.\\n다시 입력해 주세요.');");
+		out.print("history.back();");
+	} else if(chk == 1) { 
+		out.println("alert('회원가입에 성공하였습니다.\\n스트릿 우먼 파이터 팬카페에 오신것을 환영합니다.');");
+		out.print("location='boardList.jsp'");
+	}
+	out.print("</script>");
+%>
+</body>
+</html>

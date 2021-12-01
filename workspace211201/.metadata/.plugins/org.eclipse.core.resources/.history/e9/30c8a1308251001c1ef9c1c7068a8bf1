@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+/* 
+application 내장 객체: WAS(tomcat) 서버가 켜져있는 동안
+- 웹 애플리케이션이 실행되고 있는 동안의 서버 설정 정보, 자원 정보를 확인할 때 사용하는 객체
+- 웹 애플리케이션이 실행되고 있는 동안 발생하는 여러 이번트 로그 정보와 관력된 기능을 제공
+- 웹 애플리케이션 당 1개의 객체가 생성되고, 공유하는 변수로 사용
+- 웹사이트의 방문자 기록의 카운트를 할 때 사용
+
+*/
+
+
+%>
+</body>
+</html>

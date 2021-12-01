@@ -1,0 +1,18 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP 에러처리</title>
+</head>
+<body>
+<%
+Date date = new Date();
+SimpleDateFormat sef = new SimpleDateFormat ("yyyy-MM-dd");
+String today = sdf.formay(date);
+%>
+</body>
+</html>

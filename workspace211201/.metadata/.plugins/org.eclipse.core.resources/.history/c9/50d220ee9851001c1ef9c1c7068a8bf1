@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+request.setCharacterEncoding("utf-8");
+String id = request.getParameter("id");
+session.setAttribute("sessionId2", id);
+%>
+
+sessionId2 = <%=session.getAttribute("sessionid2") %>
+<a>세션2 삭제</a>&ensp;
+<a>모든 세션 삭제</a>
+</body>
+</html>

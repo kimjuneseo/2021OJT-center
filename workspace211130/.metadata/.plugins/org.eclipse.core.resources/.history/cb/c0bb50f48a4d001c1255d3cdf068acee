@@ -1,0 +1,30 @@
+<%@page import="member.MemberDBBean"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		request.setCharacterEncoding("utf-8");
+		
+		MemberDBBean member = MemberDBBean.getInstance();
+		String name = request.getParameter("name");
+		String tel = request.getParameter("name");
+		String id =  member.findMemberIf(name, tel);
+		out.print("<script>");
+		if(id == ""){
+			out.print("<script>");
+			out.print("alert('회원정보가 없습니다.'); location = 'memberInfoForm.jsp';");
+			out.print("</script>");
+		}else{
+			out.print("<script>");
+			out.print("alert('수정에 실패하였습니다.'); location = 'memberInfoForm.jsp';");
+			out.print("</script>");
+		}
+	%>
+</body>
+</html>

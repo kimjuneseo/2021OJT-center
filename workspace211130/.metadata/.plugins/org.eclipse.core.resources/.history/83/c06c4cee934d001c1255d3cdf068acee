@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="member.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보 수정</title>
+</head>
+<body>
+<%
+
+	request.setCharacterEncoding("utf-8");
+	
+	MemberDataBean member = new MemberDataBean();
+	String id = request.getParameter("id");
+	String pwd = request.getParameter("pwd");
+	String name = request.getParameter("name");
+	String tel = request.getParameter("tel");
+	String address1 = request.getParameter("address1");
+	String address2 = request.getParameter("address2");
+	String email = request.getParameter("email");
+	%>
+	
+	<% 
+	MemberDBBean memberPro = MemberDBBean.getInstance();
+	int member = memberPro.updateMember(id, pwd, name, tel, address1, address2, email);
+	out.print("<script>");
+		if(member == 1){
+			out.print("alert('수정되었습니다.'); location = 'memberInfoForm.jsp';");
+		}else{
+			out.print("alert('수정에 실패하였습니다.'); location = 'memberInfoForm.jsp';");
+		}
+	out.print("</script>");
+%>
+</body>
+</html>

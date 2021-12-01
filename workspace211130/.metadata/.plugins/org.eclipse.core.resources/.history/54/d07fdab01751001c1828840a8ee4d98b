@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비밀번호 찾기 처리</title>
+</head>
+<body>
+<%-- 아이디는 알고, 비밀번호를 모를 때 : 아이디, 전화번호, 이메일을 확인하여 alert 창을 통해 비밀번호를 알려줌 --%>
+
+</body>
+</html>

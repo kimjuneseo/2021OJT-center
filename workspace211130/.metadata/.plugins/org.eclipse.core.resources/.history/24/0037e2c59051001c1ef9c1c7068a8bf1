@@ -1,0 +1,21 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP 에러처리</title>
+</head>
+<body>
+<%
+Date date = new Date();
+SimpleDateFormat sef = new SimpleDateFormat ("yyyy-MM-dd");
+String today = sef.format(date);
+%>
+
+<!-- 고의로 에러를 발생시킴 -->
+<h2>오늘 날짜는 <%=toda %>입니다</h2>
+</body>
+</html>

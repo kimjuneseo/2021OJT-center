@@ -1,0 +1,12 @@
+package review;
+
+import java.sql.Timestamp;
+
+public class ReviewDBBean {
+	private int renum;
+	private String writer;
+	private String content;
+	private Timestamp regdate;
+	private int ref;
+	
+}

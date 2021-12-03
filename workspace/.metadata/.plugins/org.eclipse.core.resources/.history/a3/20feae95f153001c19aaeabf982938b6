@@ -1,0 +1,19 @@
+<%@page import="review.ReviewDBBean"%>
+<%@page import="review.ReviewDataBean"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+request.setCharacterEncoding("utf-8");
+int num = request.getParameter("num");
+ReviewDBBean reviewPro = ReviewDBBean.getInstance();
+reviewPro.deleteReview(num);
+%>
+</body>
+</html>

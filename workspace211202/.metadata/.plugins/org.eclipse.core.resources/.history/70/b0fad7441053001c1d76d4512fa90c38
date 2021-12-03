@@ -1,8 +1,0 @@
-package review;
-
-public class ReviewDBBean {
-	private int renum;
-	private string writer;
-	private String content;
-	
-}

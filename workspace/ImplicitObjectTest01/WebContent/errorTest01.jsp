@@ -37,6 +37,6 @@ String today = sef.format(date);
 %>
 
 <!-- 고의로 에러를 발생시킴 -->
-<h2>오늘 날짜는 <%=toda %>입니다</h2>
+<%-- <h2>오늘 날짜는 <%=toda %>입니다</h2> --%>
 </body>
 </html>

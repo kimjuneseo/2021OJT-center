@@ -21,7 +21,7 @@ h2{text-align: center;}
 #s_title { margin-bottom: 40px; font-size: 1.75em; font-weight: 900; font-family: 'Noto Sans KR', sans-serif; text-align: center;}
 .d_login { grid-template-columns: 80px 80px; justify-content: right ; text-align: right;}
 
-.content{height:500px; grid-template-rows: 30%  minmax(70%, auto); justify-content: center;}
+.content{height:500px; grid-template-rows: 30% 60% 10%; justify-content: center;}
 .content div{  border-bottom: none; border-right: none;}
 .content .grid{align-items: center; }
 .m_item{  padding-bottom: 20px; justify-content: right ; }
@@ -48,8 +48,8 @@ String id = (String)session.getAttribute("memberId");
 			</div>
 		</div>
 	<div class="big grid">
-		<form action="boardInsertPro.jsp" method="post" name="boardForm">
-			<div class="grid content">
+		<form action="boardInsertPro.jsp" method="post" name="boardForm" enctype="multipart/form-data">
+			<div class="grid content">											 
 				<div class="flex">
 					<h2>제목</h2>
 					<input type="text" name="subject" >
@@ -57,6 +57,10 @@ String id = (String)session.getAttribute("memberId");
 				<div class="flex">
 					<h2>내용</h2>
 					<div><input type="text" name="content" ></div>
+				</div>
+				<div>
+					<h2>업로드 파일</h2>
+					<div><input type="file" name="imagefile"></div>
 				</div>
 			</div>
 			<input type="submit" value="전송" class="btn">

@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 업로드 폼</title>
+</head>
+<body>
+
+<h3>이미지 업로드 라이브러리를 이용한 파일 업로드 구현</h3>
+<form action="imageUploadPro.jsp" method="post"></form>
+</body>
+</html>

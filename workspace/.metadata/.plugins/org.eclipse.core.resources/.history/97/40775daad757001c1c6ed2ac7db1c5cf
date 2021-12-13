@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>디렉티브 연습</title>
+</head>
+<body>
+<%-- 디렉티브 형태: <%@ %> --%>
+<% 
+/* directive: 지시어, 지시자 
+- 클라이언트가 웹브라우저를 통해 전달하는 요청(reqeust)을 직접적으로 처리하기 위한 문법이 아니라,
+- 웹컨테이너가 JSP 페이지를 서블릿 역확을 할 클래스로 변환할 떄 해당 페이지를 어떻게 처리할 것인지에 대한 여러가기 정보를 지정해주는 역활
+- 간당하게 정리하면, JSP 페이지가 실행될 때 필요한 여러가지 설정 정보의 지정에 사용됨
+*/
+
+%>
+</body>
+</html>

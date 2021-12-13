@@ -10,6 +10,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+import javax.swing.text.AbstractDocument.Content;
+
 import board.BoardDBBean;
 
 public class BoardDBBean {
@@ -42,16 +44,58 @@ public class BoardDBBean {
 			try { if(conn != null) conn.close(); } catch(Exception e) { e.printStackTrace();}
 		}
 		// 전체 게시글 보기
-		
-		public List<BoardDataBean> getBoardList(){
+		/*
+		 * public List<BoardDataBean> getBoardList(){ List<BoardDataBean> boardList =
+		 * new ArrayList<BoardDataBean>(); 
+		 * BoardDataBean board = null; 
+		 * try { 
+		 * conn = getConnection(); 
+		 * sql = "select * from board"; 
+		 * pstmt =onn.prepareStatement(sql); 
+		 * rs = pstmt.executeQuery();
+		 * 
+		 * while(rs.next()) { board = new BoardDataBean();
+		 * board.setNum(rs.getInt("num")); board.setWriter(rs.getString("writer"));
+		 * board.setSubject(rs.getString("subject"));
+		 * board.setContent(rs.getString("content"));
+		 * board.setRegdate(rs.getTimestamp("regdate"));
+		 * board.setReadcount(rs.getInt("readcount")); boardList.add(board); }
+		 * 
+		 * }catch(Exception e) { e.printStackTrace(); }finally { close(); } 
+		 * return boardList; 
+		 * }
+		 */
+		// 글 조회 메소드 - 10건의 데이터를 가져갈수 있도록 설정
+		// page 변수 : 몇 세이지에인지의 정보
+		// limit 변수 : 몇개인지의 정보
+		public List<BoardDataBean> getBoardList(int page, int limit, String s_search, String i_search){
+			int startRow = (page -1) * 10 + 1;	// 가져올 페이지의 시작행
+			int endRow = startRow + limit -1; // 가져울 페이지의 마지막행
+			
 			List<BoardDataBean> boardList = new ArrayList<BoardDataBean>();
 			BoardDataBean board = null;
 			try {
 				conn = getConnection();
-				sql = "select * from board";
+				if(i_search == null || i_search.length() == 0) {
+				sql = "select * from" + 
+						"    (select rownum rnum, num, writer, subject, content, regdate, readcount, imagefile from " + 
+						"        (select * from board order by num desc)) " + 
+						"            where rnum >=? and rnum <= ?" ;
 				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, startRow);
+				pstmt.setInt(2, endRow);
+				}else {
+				sql = "select * from" + 
+						"    (select rownum rnum, num, writer, subject, content, regdate, readcount, imagefile from " + 
+						"        (select * from board where "+ s_search +" like ? order by num desc)) " + 
+						"            where rnum >=? and rnum <= ?" ;
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, "%"+i_search+"%");
+				pstmt.setInt(2, startRow);
+				pstmt.setInt(3, endRow);
+				}
 				rs = pstmt.executeQuery();
-			
+				
 				while(rs.next()) {
 					board = new BoardDataBean();
 					board.setNum(rs.getInt("num"));
@@ -60,6 +104,7 @@ public class BoardDBBean {
 					board.setContent(rs.getString("content"));
 					board.setRegdate(rs.getTimestamp("regdate"));
 					board.setReadcount(rs.getInt("readcount"));
+					board.setImagfile(rs.getString("imagefile"));
 					boardList.add(board);
 				}
 				
@@ -70,7 +115,7 @@ public class BoardDBBean {
 			}
 			return boardList;
 		}
-
+		
 		//전체 글수를 구하는 메소드
 		public int getBoardListCount() {
 			int cnt = 0;
@@ -91,6 +136,67 @@ public class BoardDBBean {
 			return cnt;
 		}
 		
+		// 검색한 글수를 구하는 메소드
+		public int getBoardSearchListCount(String s_search, String i_search) {
+			int cnt = 0;
+			try {
+				conn = getConnection();
+				sql = "select count(*) cnt from board where "+s_search+" = ?";
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, i_search);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					cnt = rs.getInt("cnt");
+				}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return cnt;
+		}
+		
+		// 검색 처리 메소드 : s_search : 검색 키워드 (subject, content, wrieter), i_search: 입력한 검색 내용
+		// page: 안쓰면 기본 1page, limit: 10으로 설정하고 사용
+		public List<BoardDataBean> getBoardSearchList(int page, int limit, String s_search, String i_search){
+			int startRow = (page -1) * 10 + 1;	// 가져올 페이지의 시작행
+			int endRow = startRow + limit -1; // 가져울 페이지의 마지막행
+			List<BoardDataBean> boardList = new ArrayList<BoardDataBean>();
+			BoardDataBean board = null;
+			try {
+				conn = getConnection();
+				sql = "select * from" + 
+						"    (select rownum rnum, num, writer, subject, content, regdate, readcount, imagefile from " + 
+						"        (select * from board where "+ s_search +" like ? order by num desc)) " + 
+						"            where rnum >=? and rnum <= ?" ;
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, "%"+i_search+"%");
+				pstmt.setInt(2, startRow);
+				pstmt.setInt(3, endRow);
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					board = new BoardDataBean();
+					board.setNum(rs.getInt("num"));
+					board.setWriter(rs.getString("writer"));
+					board.setSubject(rs.getString("subject"));
+					board.setContent(rs.getString("content"));
+					board.setRegdate(rs.getTimestamp("regdate"));
+					board.setReadcount(rs.getInt("readcount"));
+					board.setImagfile(rs.getString("imagefile"));
+					boardList.add(board);
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return boardList;
+		}
+		
+		// 글 상세보기(글 1건)
 		public BoardDataBean getBoard(int num) {
 			BoardDataBean board = new BoardDataBean();
 			try {
@@ -107,6 +213,7 @@ public class BoardDBBean {
 					board.setContent(rs.getString("content"));
 					board.setRegdate(rs.getTimestamp("regdate"));
 					board.setReadcount(rs.getInt("readcount"));
+					board.setImagfile(rs.getString("imagefile"));
 				}
 				
 			}catch(Exception e) {
@@ -117,7 +224,7 @@ public class BoardDBBean {
 			
 			return board;
 		}
-		
+		// 게시글 수정 하는 메소드
 		public int boardUpdate(BoardDataBean board) {
 			int chk = 0;
 			try {
@@ -136,7 +243,7 @@ public class BoardDBBean {
 			}
 			return chk; 
 		}
-		
+		// 게시글 지우는 메소드
 		public int boardDelete(int num) {
 			int chk = 0;
 			try {
@@ -153,7 +260,7 @@ public class BoardDBBean {
 			}
 			return chk; 
 		}
-		
+		// 조회수 올려주는 메소드
 		public void readCountOnePlus(int num) {
 			
 			try {
@@ -174,11 +281,12 @@ public class BoardDBBean {
 			int chk = 0;
 			try {
 				conn = getConnection();
-				sql = "insert into board (num ,writer, subject, content ) values (board_seq.nextval,?,?,?)";
+				sql = "insert into board (num ,writer, subject, content, imagefile) values (board_seq.nextval,?,?,?,?)";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, board.getWriter());
 				pstmt.setString(2, board.getSubject());
 				pstmt.setString(3, board.getContent());
+				pstmt.setString(4, board.getImagfile());
 				chk = pstmt.executeUpdate();
 			}catch (Exception e) {
 				e.printStackTrace();
@@ -187,6 +295,8 @@ public class BoardDBBean {
 			}
 			return chk;
 		}
+		
+		
 	
 }
 		

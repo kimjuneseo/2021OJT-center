@@ -9,6 +9,7 @@ public class BoardDataBean {
 	private String content;
 	private Timestamp regdate;
 	private int readcount;
+	private String imagfile; //업로드한 이미지 파일의 이름 -> 추가 작업으로 처리
 
 	public int getNum() {
 		return num;
@@ -56,6 +57,14 @@ public class BoardDataBean {
 
 	public void setReadcount(int readcount) {
 		this.readcount = readcount;
+	}
+
+	public String getImagfile() {
+		return imagfile;
+	}
+
+	public void setImagfile(String imagfile) {
+		this.imagfile = imagfile;
 	}
 
 

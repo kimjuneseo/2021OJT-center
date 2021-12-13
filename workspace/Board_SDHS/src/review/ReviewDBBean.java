@@ -45,14 +45,39 @@ public class ReviewDBBean {
 	}
 	
 	// 리뷰 확인 메소드 : 원글에 대한 모든 리뷰를 리턴
-	public List<ReviewDataBean> getReview(int renum) {
+	/*
+	 * public List<ReviewDataBean> getReview(int renum) { List<ReviewDataBean>
+	 * reviewList = new ArrayList<ReviewDataBean>(); ReviewDataBean review = null;
+	 * try { conn = getConnection(); sql = "select * from review where ref=?"; pstmt
+	 * = conn.prepareStatement(sql); pstmt.setInt(1, renum); rs =
+	 * pstmt.executeQuery();
+	 * 
+	 * while(rs.next()) { review = new ReviewDataBean();
+	 * review.setRenum(rs.getInt("renum"));
+	 * review.setWriter(rs.getString("writer"));
+	 * review.setContent(rs.getString("content"));
+	 * review.setRegdate(rs.getTimestamp("regdate"));
+	 * review.setRef(rs.getInt("ref")); reviewList.add(review); } }catch (Exception
+	 * e) { e.printStackTrace(); }finally { close(); } return reviewList; }
+	 */
+	// 원글에 대한 댓글 리스트 : 5개씩 
+	// num: board 테이블의 원글, review 테이블에 ref에 해당), page: 해당 페이지, limit: 페이지 댓글에 갯수
+	public List<ReviewDataBean> getReview(int num, int page, int limit) {
+		int startRow = (page - 1) * 5 + 1;
+		int endRow = startRow + limit - 1;
+		
 		List<ReviewDataBean> reviewList  = new ArrayList<ReviewDataBean>();
 		ReviewDataBean review = null;
 		try {
 			conn = getConnection();
-			sql = "select * from review where ref=?";
+			sql = "select * from " + 
+					"(select rownum rnum, renum, writer, content, regdate, ref from " + 
+					"(select * from review where ref=? order by renum desc)) " + 
+					"where rnum >=? and rnum <= ? ";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, renum);
+			pstmt.setInt(1, num);
+			pstmt.setInt(2, startRow);
+			pstmt.setInt(3, endRow);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -71,6 +96,26 @@ public class ReviewDBBean {
 		}
 		return reviewList;
 	}
+	
+	// 원글에 대한 댓글 갯수
+	public int getReviewCount(int ref) {
+		int count = 0;
+		try {
+			conn = getConnection();
+			sql = "select count(*) from review where ref=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ref);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) count = rs.getInt(1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return count;
+	}
+	
 	// 댓글 추가
 	public int insertReview(ReviewDataBean review) {
 		int chk = 0;

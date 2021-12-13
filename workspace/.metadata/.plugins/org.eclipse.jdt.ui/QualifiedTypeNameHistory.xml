@@ -16,7 +16,10 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap"/>
-<fullyQualifiedTypeName name="board.BoardDataBean"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="review.ReviewDataBean"/>
+<fullyQualifiedTypeName name="board.BoardDataBean"/>
+<fullyQualifiedTypeName name="javax.swing.text.AbstractDocument.Content"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.sun.javafx.collections.MappingChange.Map"/>
 </qualifiedTypeNameHistroy>

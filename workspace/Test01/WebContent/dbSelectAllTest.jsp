@@ -46,7 +46,7 @@
 				String address1 = rs.getString("address1");
 				String address2 = rs.getString("address2");
 				String email = rs.getString("email");
-				Timestamp regdate = rs.getTimestamp("regdate");
+			/* 	Timestamp regdate = rs.getTimestamp("regdate"); */
 				%>
 				<tr>
 					<td><%=id%></td>
@@ -56,7 +56,7 @@
 					<td><%=address1%></td>
 					<td><%=address2%></td>
 					<td><%=email%></td>
-					<td><%=regdate%></td>
+					<%-- <td><%=regdate%></td> --%>
 				</tr>
 				<%
 					}

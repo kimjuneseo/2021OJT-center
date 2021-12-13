@@ -33,7 +33,7 @@
 
 a {
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 	transition: .3s
 }
 
@@ -197,6 +197,8 @@ input {
 	padding: 20px
 }
 
+.s_re{  color: red; font-weight: 900; font-size: .9rem;}
+.d_sc{ width: 75%; margin: 0 auto; color: var(--line_color); text-align: left; font-weight: 900;}
 .content___>textarea{ max-width:100%; max-height:100%; width: 100%; height: 100%; border: none;}
 
 /* 댓글 작성  */
@@ -216,6 +218,10 @@ input {
 .review__content{height: 100px; padding: 10px; border: none;}
 
 .review__btns {position: absolute; top: 10px; right: 0; z-index: var(--on_index); gap:10px}
+
+/* 페이징 영역 */
+#paging { padding-top:10px; display: flex; gap:15px; justify-content: center;}
+#paging div{width:17px; border-bottom: 1px solid #000; text-align: center;}
 </style>
 <script type="text/javascript">
 window.onload = function() {
@@ -274,19 +280,32 @@ window.onload = function() {
 
 	<%
 		BoardDBBean boardPro = BoardDBBean.getInstance();
-	List<BoardDataBean> boardList = boardPro.getBoardList();
+	List<BoardDataBean> boardList = boardPro.getBoardList(2, 10);
 
 	int cnt = boardList.size();
 	String id = (String) session.getAttribute("memberId");
 
+	// 원글에 대한 댓글 리스트의 페이징 처리 변수 (5건씩 1페이지 노출, 페이지 블럭은 5개)
+	int pageSize = 5; //1페이지 5건의 댓글을 노출
+	String pageNum = request.getParameter("pageNum");
+	if(pageNum == null) pageNum = "1";
+	
+	// 댓글의 현재 페이지, 댓글의 첫번째 행, 댓글의 마지막 행
+	int currentPage = Integer.parseInt(pageNum);
+	int startRow = (currentPage - 1 )* pageSize + 1;
+	int endRow = currentPage * pageSize;
+	
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 	int num = Integer.parseInt(request.getParameter("num"));
 	boardPro.readCountOnePlus(num);
 	BoardDataBean board = boardPro.getBoard(num);
-	
+	// review 테이블 연동, 쿼리 실행
 	ReviewDBBean reviewPro = ReviewDBBean.getInstance();
-	List<ReviewDataBean> reviewList = reviewPro.getReview(num);
+	int count = reviewPro.getReviewCount(num);
+	List<ReviewDataBean> reviewList = reviewPro.getReview(num, currentPage, 5);
+	
+	int number = count - (currentPage-1)*pageSize;
 	%>
 
 
@@ -306,6 +325,7 @@ window.onload = function() {
 				</button>
 			</div>
 		</div>
+		<div class="d_sc">현재 게시글의 번호(<span><%=num %></span>)</div>
 
 
 		<div class="right">
@@ -335,6 +355,9 @@ window.onload = function() {
 					<div class="content___">
 						<textarea name="content"><%=board.getContent()%></textarea>
 					</div>
+					<div>
+						<img alt="img" src="/board_images/<%=board.getImagfile()%>">
+					</div>
 					<div class="read_count grid small">
 						<div class="grid">
 							<h2>조회수</h2>
@@ -362,11 +385,15 @@ window.onload = function() {
 				<input type="hidden" name="ref" value="<%=num %>">
 			</form>
 			<div class="reviews">
-				<% for(ReviewDataBean reviews : reviewList){%>
+			<div>댓글 리스트(댓글 갯수 : <span class="s_re"><%=count %></span>)</div>
+			<%if(count == 0){ %>
+				<div>댓글이 없습니다.</div>
+			<% }else{
+				 for(ReviewDataBean reviews : reviewList){%>
 				<div class="review__item grid">
 					<div class="review__num grid">
-						<div class="review__subtitle">댓글 번호</div>
-						<div><%=reviews.getRenum() %></div>
+						<div class="review__subtitle">번호</div>
+						<div><%=number-- %></div>
 					</div>
 					<div class="review__writer grid">
 						<div class="review__subtitle">작성자</div>
@@ -391,8 +418,44 @@ window.onload = function() {
 				</div>
 				<%} %>
 				</div>
-				<%}%>
+				<%}
+			}
+				%>
+				<!-- 페이징 처리 영역 -->
+			<div id="paging">
+			<%
+			if(count > 0){
+				// 전체페이지 수 : ex) 81건을 한 페이지의 5개의 댓글을 노출한다면  17ro
+				int pageCount = count / pageSize + (currentPage%pageSize == 0 ? 0 : 1);
+				int startPage = 1; // 시작 페이지 번호
+				int pageBlock = 5; // 페이징 갯수
 				
+				// 시작 페이지 설정
+				if(currentPage % 5 != 0)startPage = (currentPage/5)*5+1;
+				else startPage = (currentPage/5-1)*5+1;
+				
+				// 끝 페이지 설정
+				int endPage = startPage + pageBlock - 1;
+				if(endPage > pageCount) endPage = pageCount;
+				
+				// 이전 페이징 처리
+				if(startPage > 5){
+					out.print("<a href='boardContent.jsp?num="+num+"&pageNum="+(startPage-5)+"'><div>"+ "◀"+"</div><a>");
+				}
+				
+				// 페이징 블럭 처리
+				for(int i=startPage; i<=endPage; i++){
+					out.print("<a href='boardContent.jsp?num="+num+"&pageNum="+i+"'><div>"+i+"</div><a>");
+				}
+				
+				// 다음 페이징 처리
+				if(endPage < pageCount){
+					out.print("<a href='boardContent.jsp?num="+num+"&pageNum="+(startPage+5)+"'><div>"+ "▶"+"</div><a>");
+				}
+			}
+			
+			%>
+			</div>	
 			</div>
 		</div>
 			<div class="big__board">

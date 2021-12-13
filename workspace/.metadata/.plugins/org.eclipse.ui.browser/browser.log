@@ -190,3 +190,92 @@
 11월 30, 2021 14:52:36.103 [7568:8764:1130/145236.103:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
 11월 30, 2021 14:52:36.104 [7568:8764:1130/145236.103:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
 11월 30, 2021 14:52:36.104 [7568:8764:1130/145236.103:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+
+12월 06, 2021 09:32:45.646 NEW SESSION
+12월 06, 2021 09:32:45.646 [2296:9640:1206/093245.642:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+12월 06, 2021 09:32:45.656 [2296:9640:1206/093245.642:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+12월 06, 2021 09:32:45.656 [2296:9640:1206/093245.642:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+12월 06, 2021 09:32:45.657 [2296:9640:1206/093245.646:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+12월 06, 2021 09:32:45.674 [2296:6024:1206/093245.673:ERROR:device_event_log_impl.cc(214)] [09:32:45.673] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+12월 06, 2021 10:48:56.23 [2296:6024:1206/104856.023:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 06, 2021 12:45:18.886 [2296:6024:1206/124518.886:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:45:18.886 [2296:6024:1206/124518.886:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:45:27.214 [2296:6024:1206/124527.214:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:45:27.214 [2296:6024:1206/124527.214:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:45:27.746 [2296:6024:1206/124527.746:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:45:27.746 [2296:6024:1206/124527.746:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:45:27.747 [2296:6024:1206/124527.746:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:46:03.434 [2296:6024:1206/124603.434:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:46:03.434 [2296:6024:1206/124603.434:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:46:13.33 [2296:6024:1206/124613.032:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:46:13.33 [2296:6024:1206/124613.032:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:49:17.781 [2296:6024:1206/124917.781:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:49:17.781 [2296:6024:1206/124917.781:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:49:18.213 [2296:6024:1206/124918.213:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:49:18.213 [2296:6024:1206/124918.213:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:49:32.274 [2296:6024:1206/124932.274:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:49:32.274 [2296:6024:1206/124932.274:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:49:51.652 [2296:6024:1206/124951.652:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:49:51.652 [2296:6024:1206/124951.652:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:50:00.254 [2296:6024:1206/125000.254:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:50:00.254 [2296:6024:1206/125000.254:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:50:04.69 [2296:6024:1206/125004.069:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:50:04.70 [2296:6024:1206/125004.069:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:50:21.916 [2296:6024:1206/125021.915:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:50:21.916 [2296:6024:1206/125021.915:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:50:27.496 [2296:6024:1206/125027.495:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:50:27.496 [2296:6024:1206/125027.496:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:50:34.339 [2296:6024:1206/125034.339:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:50:34.340 [2296:6024:1206/125034.339:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 12:50:40.627 [2296:6024:1206/125040.627:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:50:40.627 [2296:6024:1206/125040.627:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 12:50:40.628 [2296:6024:1206/125040.627:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 13:34:54.929 [2296:6024:1206/133454.929:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 13:34:54.930 [2296:6024:1206/133454.929:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+12월 06, 2021 13:34:57.344 [2296:6024:1206/133457.344:ERROR:CONSOLE(1)] "console.assert", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+12월 06, 2021 13:34:57.344 [2296:6024:1206/133457.344:ERROR:CONSOLE(0)] "TypeError: Cannot read properties of null (reading 'sourceURL')", source:  (0)
+
+12월 08, 2021 08:42:22.894 NEW SESSION
+12월 08, 2021 08:42:22.894 [8724:5908:1208/084222.891:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+12월 08, 2021 08:42:22.898 [8724:5908:1208/084222.892:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+12월 08, 2021 08:42:22.898 [8724:5908:1208/084222.892:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+12월 08, 2021 08:42:22.899 [8724:5908:1208/084222.894:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+12월 08, 2021 08:42:22.909 [8724:8736:1208/084222.909:ERROR:device_event_log_impl.cc(214)] [08:42:22.909] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+12월 08, 2021 09:01:58.796 [12236:6300:1208/090158.795:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+12월 08, 2021 09:01:58.797 [12236:6300:1208/090158.796:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+12월 08, 2021 09:01:58.798 [12236:6300:1208/090158.796:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+12월 08, 2021 09:01:58.799 [12236:6300:1208/090158.799:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+12월 08, 2021 09:01:58.829 [12236:6924:1208/090158.829:ERROR:device_event_log_impl.cc(214)] [09:01:58.829] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+12월 08, 2021 09:07:16.790 [3692:2892:1208/090716.789:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+12월 08, 2021 09:07:16.790 [3692:2892:1208/090716.789:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+12월 08, 2021 09:07:16.791 [3692:2892:1208/090716.789:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+12월 08, 2021 09:07:16.793 [3692:2892:1208/090716.793:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+12월 08, 2021 09:07:16.820 [3692:9956:1208/090716.820:ERROR:device_event_log_impl.cc(214)] [09:07:16.819] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+12월 08, 2021 09:09:35.52 [6168:10628:1208/090935.051:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+12월 08, 2021 09:09:35.52 [6168:10628:1208/090935.051:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+12월 08, 2021 09:09:35.52 [6168:10628:1208/090935.051:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+12월 08, 2021 09:09:35.53 [6168:10628:1208/090935.053:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+12월 08, 2021 09:09:35.64 [6168:1632:1208/090935.063:ERROR:device_event_log_impl.cc(214)] [09:09:35.063] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+12월 08, 2021 09:10:25.943 [3716:11916:1208/091025.943:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+12월 08, 2021 09:10:25.944 [3716:11916:1208/091025.943:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+12월 08, 2021 09:10:25.944 [3716:11916:1208/091025.943:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+12월 08, 2021 09:10:25.946 [3716:11916:1208/091025.946:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+12월 08, 2021 09:10:25.972 [3716:8552:1208/091025.971:ERROR:device_event_log_impl.cc(214)] [09:10:25.972] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+12월 08, 2021 09:12:20.807 [8568:5780:1208/091220.807:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+12월 08, 2021 09:12:20.808 [8568:5780:1208/091220.807:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+12월 08, 2021 09:12:20.808 [8568:5780:1208/091220.807:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+12월 08, 2021 09:12:20.810 [8568:5780:1208/091220.810:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+12월 08, 2021 09:12:20.833 [8568:8792:1208/091220.833:ERROR:device_event_log_impl.cc(214)] [09:12:20.833] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+12월 08, 2021 09:15:24.690 [8448:4508:1208/091524.689:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+12월 08, 2021 09:15:24.691 [8448:4508:1208/091524.690:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+12월 08, 2021 09:15:24.691 [8448:4508:1208/091524.690:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+12월 08, 2021 09:15:24.695 [8448:4508:1208/091524.694:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+12월 08, 2021 09:15:24.733 [8448:5888:1208/091524.733:ERROR:device_event_log_impl.cc(214)] [09:15:24.733] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+12월 08, 2021 10:53:25.588 [1180:4760:1208/105325.587:ERROR:chrome_browser_main_extra_parts_metrics.cc(226)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+12월 08, 2021 10:53:25.589 [1180:4760:1208/105325.588:ERROR:chrome_browser_main_extra_parts_metrics.cc(229)] crbug.com/1216328: Checking Bluetooth availability ended.
+12월 08, 2021 10:53:25.589 [1180:4760:1208/105325.588:ERROR:chrome_browser_main_extra_parts_metrics.cc(232)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+12월 08, 2021 10:53:25.592 [1180:4760:1208/105325.591:ERROR:chrome_browser_main_extra_parts_metrics.cc(236)] crbug.com/1216328: Checking default browser status ended.
+12월 08, 2021 10:53:25.619 [1180:7812:1208/105325.619:ERROR:device_event_log_impl.cc(214)] [10:53:25.618] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+12월 08, 2021 10:59:45.555 [1180:7812:1208/105945.555:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 08, 2021 12:34:05.207 [1180:7812:1208/123405.207:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 08, 2021 14:20:31.170 [1180:7812:1208/142031.170:ERROR:interface_endpoint_client.cc(658)] Message 1 rejected by interface blink.mojom.WidgetHost

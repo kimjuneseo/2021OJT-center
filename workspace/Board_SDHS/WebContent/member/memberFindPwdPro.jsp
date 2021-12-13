@@ -14,7 +14,7 @@
 		String id = request.getParameter("id");
 		String tel = request.getParameter("tel");
 		String email = request.getParameter("email");
-		String pwd = member.findMemberPwd(id, tel, email);
+		String pwd = member.findId(id, tel);
 		out.print("<script>");
 		if(pwd == ""){
 		out.print("alert('회원정보가 없습니다.\\n다시 입력해주세요'); location = 'memberFindPwdForm.jsp';");

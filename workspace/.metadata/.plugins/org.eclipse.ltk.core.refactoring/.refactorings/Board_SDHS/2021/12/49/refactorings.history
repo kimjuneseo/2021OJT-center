@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move &apos;ReviewDeletePro.jsp&apos; to &apos;review&apos;" description="Move &apos;ReviewDeletePro.jsp&apos; to &apos;review&apos;" destination="WebContent/review" element1="WebContent/ReviewDeletePro.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1638502718121" updateReferences="true"/>
-</session>

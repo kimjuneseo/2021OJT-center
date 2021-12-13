@@ -93,9 +93,9 @@ commit;
 -- '__부산_' : 5글자이고, 3번째, 4번째가 부산인
 
 select * from member;
-
+select pwd from member where id='ppp777' and tel='01109975' and tel=?
 DELETE FROM member WHERE id = '이키';
-
+select id from member where name= '신가비' and tel='010-2222-2222';
 update member
-set name = '이키', pwd = '123444'
+set name = '이키'
 where id = 'hook' and pwd = '1234';

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+        http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+
+    <description>EL에서 함수실행</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>ELfunctions</short-name>
+
+    <function>
+        <description>Date 객체 포맷팅</description>
+        <name>dateFormat</name>
+        <function-class>mvjsp.chap15.DateUtil</function-class>
+        <function-signature>
+            java.lang.String format(java.util.Date)
+        </function-signature>
+    </function>
+
+</taglib>

@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--
+EL (Expression Language) - 표현 언어
+- JSP 2.0버전에서 지원되는 특수한 형태를 가지는 스크립트 언어
+- 에러 속성값들을 JSP 스크립트보다 함축적인 코드를 통해서 간결하고 편리하게 사용할 수 있어서 널리 사용되고 있다 
+
+2. EL의 기능
+- JSP의 네 가지 영역 객체가 제공하는 속성을 사용
+- 수치 연산, 관계 연산, 논리 연산자 제공
+- 자바 클래스 메소드 호출 기능 제공
+- 쿠키, 기본 객체의 속성 등 JSP를 사용하기 위한 EL의 기본 객체 제공
+- 람다식을 이용한 함수 정의와 실행 ㄱ능 
+
+  -->
+</body>
+</html>

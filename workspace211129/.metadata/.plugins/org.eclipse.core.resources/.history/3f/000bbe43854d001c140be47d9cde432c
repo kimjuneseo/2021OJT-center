@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="container">
+			<div id="m_title">Street Women Fighter</div>
+			<div id="s_title">LOGIN</div>
+			<form action="memberLoginPro.jsp" method="post" name="loginForm">
+				<table>
+					<tr>
+						<td ><input type="text" name="id" class="t_input" placeholder="아이디를 입력해주세요."></td>
+					</tr>
+					<tr>
+						<td ><input type="password" name="pwd" class="t_input" placeholder="비빌번호입력해주세요."></td>
+					</tr>
+					<tr>
+						<td class="flex"><input type="checkbox" name="save_id" id="t_chk"><label for="t_chk">아이디 저장</label></td>
+					</tr>
+					<tr><td ><input type="button" class="t_input login" value="로그인" id="btn_login"></td></tr>
+					<tr class="flex table__sin">
+						<td><a href="#">아이디 찾기</a></td>
+						<td><a href="#">비밀번호 찾기</a></td>
+						<td><span id="btn_member">가입정보 확인</span></td>
+						<td><a href="memberJoinForm.jsp">회원가입</a></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+</body>
+</html>

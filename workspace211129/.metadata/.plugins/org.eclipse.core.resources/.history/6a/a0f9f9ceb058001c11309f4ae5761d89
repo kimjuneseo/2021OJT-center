@@ -1,0 +1,5 @@
+package el;
+
+public class Thermometer {
+
+}

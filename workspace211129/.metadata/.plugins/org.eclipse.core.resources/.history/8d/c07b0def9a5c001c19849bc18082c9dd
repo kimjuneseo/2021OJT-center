@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<h2>JSTL - sql 라이브러리</h2>
+<sql:setDataSource var="conn"
+driver="oracle.jdbc.driver.OracleDriver"
+url="jdbc:oracle:thin:@localhost:1521:xe"
+user="sdhs2111"
+password="1234"
+/>
+
+<!-- ${conn} -->
+
+<!-- 데이터삽입 -->
+<sql:update dataSource="${conn }">
+	insert into test01(id, name) values(1, '육치성')
+</sql:update>
+
+<c:forEach var="i" begin="11" end="20">
+	<sql:update dataSource="${conn }">
+		insert into test01(id, name) values(${i }, concat('허니제이',${i }))
+	</sql:update>	
+</c:forEach>
+
+</body>
+</html>
